@@ -1,0 +1,21 @@
+
+
+git config --global user.name Heloisa-Moraes
+git config --global user.email helomoraes2009@hotmail.com
+
+criar projeto: 
+dotnet new mvc -o Pokedex
+
+acessar a pasta: 
+
+cd Pokedex
+
+executar o projeto:
+
+dotnet watch run
+
+Abrir nuget gallery:
+ ctrl + shift + p  - pesquisar nuget 
+
+ instalamos as bibliotecas 
+
