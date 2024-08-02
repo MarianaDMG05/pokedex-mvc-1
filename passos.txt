@@ -19,3 +19,15 @@ Abrir nuget gallery:
 
  instalamos as bibliotecas 
 
+
+instalar as ferramentas de migração: 
+
+ferramenta dotnet ef  
+
+para atualizar a ferramenta que já foi instalada: dotnet tool update --global dotnet-ef --version 8.0.7
+
+dotnet ef  migrations add inicializando-banco
+
+criar o banco: 
+
+dotnet ef database update

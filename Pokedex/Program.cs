@@ -1,8 +1,24 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Pokedex.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+string conexao = builder.Configuration.GetConnectionString("PokedexConexao");
 
+var versao = ServerVersion.AutoDetect(conexao);   /*conexao com o banco */
+builder.Services.AddDbContext<AppDbContext> (
+    opt => opt.UseMySql(conexao, versao)
+);
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole> ()
+.AddEntityFrameworkStores<AppDbContext>()
+.AddDefaultTokenProviders(); /*gera senhas e acesso automaticamente */
+
+/*onde irá salvar os dados do usuario */
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
