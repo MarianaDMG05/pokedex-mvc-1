@@ -44,5 +44,4 @@ namespace Pokedex.Models;
 
         public ICollection<PokemonTipo> Tipos { get; set; }
 
-        public ICollection<PokemonTipo> Pokemons { get; set; }
     }
